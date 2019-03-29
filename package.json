@@ -1,0 +1,22 @@
+{
+  "name": "node-api",
+  "version": "1.0.0",
+  "description": "shopping-tool",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Bonifase/Now-this-is-node-rest-api.git"
+  },
+  "author": "Bonifase Orwa",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Bonifase/Now-this-is-node-rest-api/issues"
+  },
+  "homepage": "https://github.com/Bonifase/Now-this-is-node-rest-api#readme",
+  "dependencies": {
+    "express": "^4.16.4"
+  }
+}
