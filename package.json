@@ -20,6 +20,7 @@
   "homepage": "https://github.com/Bonifase/Now-this-is-node-rest-api#readme",
   "dependencies": {
     "express": "^4.16.4",
+    "mongoose": "^5.4.20",
     "nodemon": "^1.18.10"
   },
   "devDependencies": {
