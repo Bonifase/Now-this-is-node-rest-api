@@ -10,8 +10,11 @@ const port = process.env.PORT || 3000;
 
 shoppingsRouter.route('/shoppings')
 .get((req, res) => {
-
-  Item.find((error, shoppings) => {
+  const query = {};
+  if(req.query.category){
+    query.category = req.query.category
+  };
+  Item.find(query, (error, shoppings) => {
       if(error){
           return res.send(error);
       }
