@@ -1,5 +1,6 @@
 const express = require('express');
 const mongoose = require('mongoose');
+const bodyParser = require('body-parser');
 const Item = require('./models/itemModel');
 
 const app = express();
@@ -7,8 +8,15 @@ const shoppingsRouter = express.Router();
 const db = mongoose.connect('mongodb://localhost/shoopingAPI');
 const port = process.env.PORT || 3000;
 
+app.use(bodyParser.urlencoded({extended: true}));
+app.use(bodyParser.json())
 
 shoppingsRouter.route('/shoppings')
+.post((req, res) => {
+  const item = new Item(req.body);
+  console.log(item);
+  return res.status(201).json(item)
+})
 .get((req, res) => {
   const query = {};
   if(req.query.category){
