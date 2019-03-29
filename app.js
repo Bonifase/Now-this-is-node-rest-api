@@ -21,6 +21,16 @@ shoppingsRouter.route('/shoppings')
       return res.json(shoppings);
   });
   });
+shoppingsRouter.route('/shoppings/:itemId')
+.get((req, res) => {
+  
+  Item.findById(req.params.itemId, (error, item) => {
+      if(error){
+          return res.send(error);
+      }
+      return res.json(item);
+  });
+  });
 
 app.use('/api', shoppingsRouter);
 
