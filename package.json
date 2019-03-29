@@ -4,6 +4,8 @@
   "description": "shopping-tool",
   "main": "index.js",
   "scripts": {
+    "start": "nodemon app.js",
+    "lint": "eslint .",
     "test": "npm test"
   },
   "repository": {
@@ -17,6 +19,23 @@
   },
   "homepage": "https://github.com/Bonifase/Now-this-is-node-rest-api#readme",
   "dependencies": {
-    "express": "^4.16.4"
+    "express": "^4.16.4",
+    "nodemon": "^1.18.10"
+  },
+  "devDependencies": {
+    "eslint": "^5.15.3",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-import": "^2.16.0"
+  },
+  "nodemonConfig": {
+    "restatrtable": "rs",
+    "ignore": [
+      "node_modules/**/node_modules"
+    ],
+    "delay": "2500",
+    "env": {
+      "NODE_ENV": "development",
+      "PORT": "4000"
+    }
   }
 }
