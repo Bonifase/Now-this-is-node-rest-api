@@ -5,7 +5,7 @@ const Item = require('./models/itemModel');
 
 const app = express();
 const shoppingsRouter = express.Router();
-const db = mongoose.connect('mongodb://localhost/shoopingAPI');
+const db = mongoose.connect('mongodb://localhost/shoopingAPI', { useNewUrlParser: true });
 const port = process.env.PORT || 3000;
 
 app.use(bodyParser.urlencoded({extended: true}));
@@ -14,6 +14,7 @@ app.use(bodyParser.json())
 shoppingsRouter.route('/shoppings')
 .post((req, res) => {
   const item = new Item(req.body);
+  item.save(item);
   console.log(item);
   return res.status(201).json(item)
 })
