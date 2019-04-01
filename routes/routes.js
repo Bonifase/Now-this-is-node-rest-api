@@ -31,7 +31,20 @@ function routes(Item){
         }
         return res.json(item);
     });
+    })
+    .put((req, res) => {
+    Item.findById(req.params.itemId, (error, item) => {
+        if(error){
+            return res.send(error);
+        }
+        item.title = req.body.title;
+        item.price = req.body.price;
+        item.quantity = req.body.quantity;
+        item.description = req.body.description;
+        item.save()
+        return res.json(item); 
     });
+})
 
     return shoppingRouter;
 }
