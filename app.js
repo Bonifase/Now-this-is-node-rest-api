@@ -6,7 +6,7 @@ const app = express();
 const db = mongoose.connect('mongodb://localhost/shoopingAPI', { useNewUrlParser: true });
 const port = process.env.PORT || 3000;
 const Item = require('./models/itemModel');
-const shoppingRouter = require('./routes/routes')(Item);
+const shoppingRouter = require('./routes/itemRoutes')(Item);
 
 
 app.use(bodyParser.urlencoded({extended: true}));

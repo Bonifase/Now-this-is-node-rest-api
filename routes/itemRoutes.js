@@ -1,7 +1,7 @@
 const express = require('express');
 
 
-function routes(Item){
+function itemRoutes(Item){
     const shoppingRouter = express.Router();
     shoppingRouter.route('/shoppings')
     .post((req, res) => {
@@ -44,9 +44,9 @@ function routes(Item){
         item.save()
         return res.json(item); 
     });
-})
+    })
 
     return shoppingRouter;
 }
 
-module.exports = routes;
+module.exports = itemRoutes;
